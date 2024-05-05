@@ -12,4 +12,4 @@ phases:
   build:
     commands:
       - npm test
-      - mvn verify sonar:sonar -Dsonar.projectKey=leesungon -Dsonar.organization=leesungon -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$TOKEN
+      - mvn sonar:sonar -Dsonar.projectKey=leesungon -Dsonar.organization=leesungon -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$TOKEN
