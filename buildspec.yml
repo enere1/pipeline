@@ -1,0 +1,14 @@
+version: 0.2
+env:
+  secrets-manager:
+    TOKEN: firstSecret:tokenForSonar
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - npm install -g jest
+  build:
+    commands:
+      - npm tests
+      - mvn verify sonar:sonar -Dsonar.projectKey=leesungon -Dsonar.organization=leesungon -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$TOKEN
